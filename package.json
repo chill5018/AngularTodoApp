@@ -31,6 +31,7 @@
     "file-loader": "0.8.5",
     "jade": "1.11.0",
     "method-override": "2.3.5",
+    "mongodb": "^2.2.11",
     "mongoose": "4.4.13",
     "morgan": "1.7.0",
     "reflect-metadata": "0.1.2",
