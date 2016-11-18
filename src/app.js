@@ -12,6 +12,9 @@ import mongoose from 'mongoose'
 // File path utilities to make sure we're using the right type of slash (/ vs \)
 import path from 'path'
 
+// Import Controllers
+import mainController from './controllers/main'
+
 
 // Configure Database
 
@@ -41,6 +44,16 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 // Allow PUT/DELTE
 app.use(methodOverride())
+
+
+// Configre Routes
+
+app.get('/', mainController.getIndex)
+app.get('/templates/:template', mainController.getTemplate)
+app.get('/todos', mainController.getAllTodos)
+app.post('/todos', mainController.postNewTodo)
+app.delete('/todos/:id', mainController.deleteTodo)
+
 
 
 // Start App
