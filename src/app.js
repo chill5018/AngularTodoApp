@@ -34,9 +34,9 @@ app.set('views', path.join(__dirname, '..','views'))
 //Set our view engine to be jade (so when we render these views they are compiled by the jade compiler)
 app.set('view engine', 'jade')
 // Set the static files directory - /public will be / on the frontend
-app.user(express.static)(path.join(__dirname, '..', 'public'))
+app.use(express.static(path.join(__dirname, '..', 'public')))
 // Log requests to the console
-app.user(logger('dev'))
+app.use(logger('dev'))
 // Parse JSON data and put it into an object which we can access
 app.use(bodyParser.json())
 // Allow PUT/DELTE

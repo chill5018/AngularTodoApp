@@ -13,7 +13,7 @@ let mainController = {
   },
   // This gets all Todos in the collection and sends it back in JSON formate
   getAllTodos: (req, res) => {
-    Todo.find({}, (err, todos) ={
+    Todo.find({}, (err, todos) => {
       if (err) {
         // Send error to the client if there is one
         return res.send(err)
